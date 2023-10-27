@@ -2,14 +2,14 @@ import { useState } from 'react';
 import iconArrow from './assets/images/icon-arrow.svg';
 
 export default function App() {
-  const [date, setDate] = useState('');
+  const [day, setDate] = useState('');
   const [month, setMonth] = useState('');
   const [year, setYear] = useState('');
 
   return (
     <div className="container">
       <Form
-        date={date}
+        day={day}
         month={month}
         year={year}
         onChangeDate={setDate}
@@ -21,16 +21,13 @@ export default function App() {
   );
 }
 
-function Form({
-  date,
-  month,
-  year,
-  onChangeDate,
-  onChangeMonth,
-  onChangeYear,
-}) {
+function Form({ day, month, year, onChangeDate, onChangeMonth, onChangeYear }) {
+  function handleSubmit(e) {
+    e.preventDefault();
+  }
+
   return (
-    <form>
+    <form onSubmit={(e) => handleSubmit(e)}>
       <div className="flex-flow form-top">
         <div className="input-div">
           <label htmlFor="form-day">Day</label>
@@ -38,7 +35,7 @@ function Form({
             type="text"
             id="form-day"
             placeholder="DD"
-            value={date}
+            value={day}
             onChange={(e) => onChangeDate(e.target.value)}
           />
         </div>
