@@ -61,7 +61,8 @@ body {
 .container {
   background-color: hsl(0, 0%, 100%);
   padding: 3rem;
-  border-radius: 1.5rem 1.5rem 5rem 1.5rem;
+  border-radius: 1.5rem 1.5rem 10rem 1.5rem;
+  box-shadow: 0 0.125rem 0.25rem hsla(0, 0%, 8%, 10%);
 }
 
 .form-top {
