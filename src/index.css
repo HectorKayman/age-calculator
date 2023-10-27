@@ -17,6 +17,11 @@
   src: url('./assets/fonts/Poppins-ExtraBold.ttf') format(truetype);
 }
 
+@font-face {
+  font-family: Poppins-ExtraBoldItalic;
+  src: url('./assets/fonts/Poppins-ExtraBoldItalic.ttf') format(truetype);
+}
+
 :root {
   font-family: Poppins-Bold, sans-serif;
   line-height: 1.5;
@@ -80,7 +85,7 @@ body {
 }
 
 .form-top input[type='text'] {
-  font-family: Poppins-ExtraBold;
+  font-family: Poppins-Bold;
   font-size: 2rem;
   padding: 0.625rem 1rem;
   margin: 0.5rem 0;
@@ -103,4 +108,17 @@ body {
   border-radius: 3rem;
   background-color: hsl(259, 100%, 65%);
   cursor: pointer;
+}
+
+.display p {
+  font-family: Poppins-ExtraBoldItalic;
+  font-size: 6rem;
+  font-style: oblique;
+  line-height: 1;
+  color: hsl(0, 0%, 8%);
+}
+
+.display p > span {
+  color: hsl(259, 100%, 65%);
+  letter-spacing: 1rem;
 }

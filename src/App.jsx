@@ -39,15 +39,15 @@ function Form() {
 
 function Display() {
   return (
-    <div>
+    <div className="display">
       <p>
-        <span>--</span> years
+        <span>--</span>years
       </p>
       <p>
-        <span>--</span> months
+        <span>--</span>months
       </p>
       <p>
-        <span>--</span> days
+        <span>--</span>days
       </p>
     </div>
   );
