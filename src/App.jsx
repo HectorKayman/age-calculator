@@ -27,7 +27,8 @@ function Form() {
         </div>
         <div className="input-div"></div>
       </div>
-      <div className="form-bot">
+      <div className="flex-flow form-bot">
+        <hr />
         <button>
           <img src={iconArrow} alt="submit" />
         </button>
