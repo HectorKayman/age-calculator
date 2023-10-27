@@ -34,5 +34,17 @@ function Form() {
 }
 
 function Display() {
-  return <div>Display</div>;
+  return (
+    <div>
+      <p>
+        <span>--</span> years
+      </p>
+      <p>
+        <span>--</span> months
+      </p>
+      <p>
+        <span>--</span> days
+      </p>
+    </div>
+  );
 }
