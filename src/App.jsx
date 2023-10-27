@@ -2,7 +2,7 @@ import iconArrow from './assets/images/icon-arrow.svg';
 
 export default function App() {
   return (
-    <div>
+    <div className="container">
       <Form />
       <Display />
     </div>
@@ -12,19 +12,21 @@ export default function App() {
 function Form() {
   return (
     <form>
-      <div>
-        <label htmlFor="form-day">Day</label>
-        <input type="text" id="form-day" placeholder="DD" />
+      <div className="form-top">
+        <div>
+          <label htmlFor="form-day">Day</label>
+          <input type="text" id="form-day" placeholder="DD" />
+        </div>
+        <div>
+          <label htmlFor="form-month">Month</label>
+          <input type="text" id="form-month" placeholder="MM" />
+        </div>
+        <div>
+          <label htmlFor="form-year">Year</label>
+          <input type="text" id="form-year" placeholder="YYYY" />
+        </div>
       </div>
-      <div>
-        <label htmlFor="form-month">Month</label>
-        <input type="text" id="form-month" placeholder="MM" />
-      </div>
-      <div>
-        <label htmlFor="form-year">Year</label>
-        <input type="text" id="form-year" placeholder="YYYY" />
-      </div>
-      <div>
+      <div className="form-bot">
         <button>
           <img src={iconArrow} alt="submit" />
         </button>
