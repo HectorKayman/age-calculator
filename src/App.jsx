@@ -25,6 +25,7 @@ function Form() {
           <label htmlFor="form-year">Year</label>
           <input type="text" id="form-year" placeholder="YYYY" />
         </div>
+        <div className="input-div"></div>
       </div>
       <div className="form-bot">
         <button>

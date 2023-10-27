@@ -18,7 +18,7 @@
 }
 
 :root {
-  font-family: Poppins-Regular, sans-serif;
+  font-family: Poppins-Bold, sans-serif;
   line-height: 1.5;
 
   background-color: hsl(0, 0%, 94%);
@@ -33,6 +33,7 @@
 *,
 *::before,
 *::after {
+  font: 16px;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -54,9 +55,35 @@ body {
 
 .container {
   background-color: hsl(0, 0%, 100%);
+  padding: 3rem;
+  border-radius: 1.5rem 1.5rem 5rem 1.5rem;
+}
+
+.form-top {
+  gap: 2rem;
 }
 
 .input-div {
   display: flex;
   flex-direction: column;
+  width: 10rem;
+}
+
+.form-top label,
+.form-top input {
+  color: hsl(0, 1%, 44%);
+}
+
+.form-top label {
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+}
+
+.form-top input[type='text'] {
+  font-family: Poppins-ExtraBold;
+  font-size: 2rem;
+  padding: 0.625rem 1rem;
+  margin: 0.5rem 0;
+  border: 1px solid hsl(0, 0%, 86%);
+  border-radius: 0.4rem;
 }
