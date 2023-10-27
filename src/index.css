@@ -75,7 +75,7 @@ body {
 }
 
 .form-top label,
-.form-top input {
+.form-top input::placeholder {
   color: hsl(0, 1%, 44%);
 }
 
