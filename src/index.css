@@ -1,0 +1,52 @@
+@font-face {
+  font-family: Poppins-Regular;
+  src: url('./assets/fonts/Poppins-Regular.ttf') format(truetype);
+}
+@font-face {
+  font-family: Poppins-Bold;
+  src: url('./assets/fonts/Poppins-Bold.ttf') format(truetype);
+}
+
+@font-face {
+  font-family: Poppins-Italic;
+  src: url('./assets/fonts/Poppins-Italic.ttf') format(truetype);
+}
+
+@font-face {
+  font-family: Poppins-ExtraBold;
+  src: url('./assets/fonts/Poppins-ExtraBold.ttf') format(truetype);
+}
+
+:root {
+  font-family: Poppins-Regular, sans-serif;
+  line-height: 1.5;
+
+  background-color: hsl(0, 0%, 94%);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  place-content: center;
+  min-width: 375px;
+  min-height: 100vh;
+}
+
+#root {
+  background-color: hsl(0, 0%, 100%);
+}
