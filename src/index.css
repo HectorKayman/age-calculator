@@ -55,3 +55,8 @@ body {
 .container {
   background-color: hsl(0, 0%, 100%);
 }
+
+.input-div {
+  display: flex;
+  flex-direction: column;
+}
