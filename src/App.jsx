@@ -22,8 +22,32 @@ export default function App() {
 }
 
 function Form({ day, month, year, onChangeDay, onChangeMonth, onChangeYear }) {
+  const [isValidDay, setIsValidDay] = useState(true);
+  const [isValidMonth, setIsValidMonth] = useState(true);
+  const [isValidYear, setIsValidYear] = useState(true);
+  const [errorMsgDay, setErrorMsgDay] = useState('');
+  const [errorMsgMonth, setErrorMsgMonth] = useState('');
+  const [errorMsgYear, setErrorMsgYear] = useState('');
+
+  function handleError(type, fnValid, fnErrMsg, input, min, max) {
+    if (input === '') {
+      fnValid(false);
+      fnErrMsg('This field is required');
+    } else if (input < min || input > max || isNaN(Number(input))) {
+      fnValid(false);
+      fnErrMsg(`Must be a valid ${type}`);
+    } else {
+      fnValid(true);
+      fnErrMsg('');
+    }
+  }
+
   function handleSubmit(e) {
     e.preventDefault();
+
+    handleError('day', setIsValidDay, setErrorMsgDay, day, 1, 31);
+    handleError('month', setIsValidMonth, setErrorMsgMonth, month, 1, 12);
+    handleError('year', setIsValidYear, setErrorMsgYear, year, 1889, 2023);
   }
 
   return (
@@ -34,6 +58,8 @@ function Form({ day, month, year, onChangeDay, onChangeMonth, onChangeYear }) {
           value={day}
           placeholder="DD"
           onChangeInput={onChangeDay}
+          isValid={isValidDay}
+          errorMessage={errorMsgDay}
         >
           Day
         </FormInput>
@@ -42,6 +68,8 @@ function Form({ day, month, year, onChangeDay, onChangeMonth, onChangeYear }) {
           value={month}
           placeholder="MM"
           onChangeInput={onChangeMonth}
+          isValid={isValidMonth}
+          errorMessage={errorMsgMonth}
         >
           Month
         </FormInput>
@@ -50,6 +78,8 @@ function Form({ day, month, year, onChangeDay, onChangeMonth, onChangeYear }) {
           value={year}
           placeholder="YYYY"
           onChangeInput={onChangeYear}
+          isValid={isValidYear}
+          errorMessage={errorMsgYear}
         >
           Year
         </FormInput>
@@ -65,17 +95,29 @@ function Form({ day, month, year, onChangeDay, onChangeMonth, onChangeYear }) {
   );
 }
 
-function FormInput({ id, value, placeholder, onChangeInput, children }) {
+function FormInput({
+  id,
+  value,
+  placeholder,
+  onChangeInput,
+  isValid,
+  errorMessage,
+  children,
+}) {
   return (
     <div className="input-div">
-      <label htmlFor={id}>{children}</label>
+      <label className={!isValid ? 'error-label' : ''} htmlFor={id}>
+        {children}
+      </label>
       <input
+        className={!isValid ? 'error-input' : ''}
         type="text"
         id={id}
         placeholder={placeholder}
         value={value}
         onChange={(e) => onChangeInput(e.target.value)}
       />
+      {!isValid && <div className="error-field">{errorMessage}</div>}
     </div>
   );
 }
