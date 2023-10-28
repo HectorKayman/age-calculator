@@ -2,7 +2,7 @@ import { useState } from 'react';
 import iconArrow from './assets/images/icon-arrow.svg';
 
 export default function App() {
-  const [day, setDate] = useState('');
+  const [day, setDay] = useState('');
   const [month, setMonth] = useState('');
   const [year, setYear] = useState('');
 
@@ -12,7 +12,7 @@ export default function App() {
         day={day}
         month={month}
         year={year}
-        onChangeDate={setDate}
+        onChangeDay={setDay}
         onChangeMonth={setMonth}
         onChangeYear={setYear}
       />
@@ -21,7 +21,7 @@ export default function App() {
   );
 }
 
-function Form({ day, month, year, onChangeDate, onChangeMonth, onChangeYear }) {
+function Form({ day, month, year, onChangeDay, onChangeMonth, onChangeYear }) {
   function handleSubmit(e) {
     e.preventDefault();
   }
@@ -29,36 +29,30 @@ function Form({ day, month, year, onChangeDate, onChangeMonth, onChangeYear }) {
   return (
     <form onSubmit={(e) => handleSubmit(e)}>
       <div className="flex-flow form-top">
-        <div className="input-div">
-          <label htmlFor="form-day">Day</label>
-          <input
-            type="text"
-            id="form-day"
-            placeholder="DD"
-            value={day}
-            onChange={(e) => onChangeDate(e.target.value)}
-          />
-        </div>
-        <div className="input-div">
-          <label htmlFor="form-month">Month</label>
-          <input
-            type="text"
-            id="form-month"
-            placeholder="MM"
-            value={month}
-            onChange={(e) => onChangeMonth(e.target.value)}
-          />
-        </div>
-        <div className="input-div">
-          <label htmlFor="form-year">Year</label>
-          <input
-            type="text"
-            id="form-year"
-            placeholder="YYYY"
-            value={year}
-            onChange={(e) => onChangeYear(e.target.value)}
-          />
-        </div>
+        <FormInput
+          id="form-day"
+          value={day}
+          placeholder="DD"
+          onChangeInput={onChangeDay}
+        >
+          Day
+        </FormInput>
+        <FormInput
+          id="form-day"
+          value={month}
+          placeholder="MM"
+          onChangeInput={onChangeMonth}
+        >
+          Month
+        </FormInput>
+        <FormInput
+          id="form-day"
+          value={year}
+          placeholder="YYY"
+          onChangeInput={onChangeYear}
+        >
+          Day
+        </FormInput>
         <div className="input-div"></div>
       </div>
       <div className="flex-flow form-bot">
@@ -68,6 +62,21 @@ function Form({ day, month, year, onChangeDate, onChangeMonth, onChangeYear }) {
         </button>
       </div>
     </form>
+  );
+}
+
+function FormInput({ id, value, placeholder, onChangeInput, children }) {
+  return (
+    <div className="input-div">
+      <label htmlFor={id}>{children}</label>
+      <input
+        type="text"
+        id={id}
+        placeholder={placeholder}
+        value={value}
+        onChange={(e) => onChangeInput(e.target.value)}
+      />
+    </div>
   );
 }
 
