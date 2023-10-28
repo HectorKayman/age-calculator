@@ -38,7 +38,7 @@ function Form({ day, month, year, onChangeDay, onChangeMonth, onChangeYear }) {
           Day
         </FormInput>
         <FormInput
-          id="form-day"
+          id="form-month"
           value={month}
           placeholder="MM"
           onChangeInput={onChangeMonth}
@@ -46,9 +46,9 @@ function Form({ day, month, year, onChangeDay, onChangeMonth, onChangeYear }) {
           Month
         </FormInput>
         <FormInput
-          id="form-day"
+          id="form-year"
           value={year}
-          placeholder="YYY"
+          placeholder="YYYY"
           onChangeInput={onChangeYear}
         >
           Day
