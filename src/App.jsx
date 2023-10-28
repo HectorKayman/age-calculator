@@ -34,8 +34,6 @@ function Form({ day, month, year, onChangeDay, onChangeMonth, onChangeYear }) {
           value={day}
           placeholder="DD"
           onChangeInput={onChangeDay}
-          pattern="(0[1-9]|[12][0-9]|3[01])"
-          required={true}
         >
           Day
         </FormInput>
@@ -44,8 +42,6 @@ function Form({ day, month, year, onChangeDay, onChangeMonth, onChangeYear }) {
           value={month}
           placeholder="MM"
           onChangeInput={onChangeMonth}
-          pattern="(0[1-9]|1[1,2])"
-          required={true}
         >
           Month
         </FormInput>
@@ -54,8 +50,6 @@ function Form({ day, month, year, onChangeDay, onChangeMonth, onChangeYear }) {
           value={year}
           placeholder="YYYY"
           onChangeInput={onChangeYear}
-          pattern="(19|20)d{2}"
-          required={true}
         >
           Year
         </FormInput>
@@ -71,20 +65,7 @@ function Form({ day, month, year, onChangeDay, onChangeMonth, onChangeYear }) {
   );
 }
 
-function FormInput({
-  id,
-  value,
-  placeholder,
-  onChangeInput,
-  pattern,
-  children,
-}) {
-  const [focus, setFocus] = useState(false);
-
-  function handleFocus() {
-    setFocus(true);
-  }
-
+function FormInput({ id, value, placeholder, onChangeInput, children }) {
   return (
     <div className="input-div">
       <label htmlFor={id}>{children}</label>
@@ -94,15 +75,7 @@ function FormInput({
         placeholder={placeholder}
         value={value}
         onChange={(e) => onChangeInput(e.target.value)}
-        pattern={pattern}
-        onBlur={handleFocus}
-        data-focused={focus.toString()}
       />
-      <div className="error-field">
-        {value === ''
-          ? 'This field is required'
-          : `Must be a valid ${children}`}
-      </div>
     </div>
   );
 }
