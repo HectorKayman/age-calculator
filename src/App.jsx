@@ -11,7 +11,14 @@ export default function App() {
   const [gapYear, setGapYear] = useState(null);
 
   function handleCalculateAge() {
-    // Todo
+    const currentDate = new Date();
+    const currentDay = currentDate.getDate();
+    const currentMonth = currentDate.getMonth();
+    const currentYear = currentDate.getFullYear();
+
+    setGapDay(currentDay - day);
+    setGapMonth(currentMonth - month);
+    setGapYear(currentYear - year);
   }
 
   return (
@@ -177,17 +184,17 @@ function FormInput({
   );
 }
 
-function Display() {
+function Display({ gapDay, gapMonth, gapYear }) {
   return (
     <div className="display">
       <p>
-        <span>--</span>years
+        <span>{gapYear ? gapYear : '--'}</span>years
       </p>
       <p>
-        <span>--</span>months
+        <span>{gapMonth ? gapMonth : '--'}</span>months
       </p>
       <p>
-        <span>--</span>days
+        <span>{gapDay ? gapDay : '--'}</span>days
       </p>
     </div>
   );
