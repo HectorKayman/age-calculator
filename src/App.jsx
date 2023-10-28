@@ -17,7 +17,7 @@ export default function App() {
     const currentYear = currentDate.getFullYear();
 
     setGapDay(currentDay - day);
-    setGapMonth(currentMonth - month);
+    setGapMonth(currentMonth + 1 - month);
     setGapYear(currentYear - year);
   }
 
@@ -188,13 +188,13 @@ function Display({ gapDay, gapMonth, gapYear }) {
   return (
     <div className="display">
       <p>
-        <span>{gapYear ? gapYear : '--'}</span>years
+        <span>{gapYear === null ? '--' : gapYear}</span>years
       </p>
       <p>
-        <span>{gapMonth ? gapMonth : '--'}</span>months
+        <span>{gapMonth === null ? '--' : gapMonth}</span>months
       </p>
       <p>
-        <span>{gapDay ? gapDay : '--'}</span>days
+        <span>{gapDay === null ? '--' : gapDay}</span>days
       </p>
     </div>
   );
