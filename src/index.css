@@ -22,6 +22,11 @@
   src: url('./assets/fonts/Poppins-ExtraBoldItalic.ttf') format(truetype);
 }
 
+@font-face {
+  font-family: Poppins-Italic;
+  src: url('./assets/fonts/Poppins-Italic.ttf') format(truetype);
+}
+
 :root {
   font-family: Poppins-Bold, sans-serif;
   line-height: 1.5;
@@ -114,7 +119,6 @@ body {
 .display p {
   font-family: Poppins-ExtraBoldItalic;
   font-size: 6rem;
-  font-style: oblique;
   line-height: 1;
   color: hsl(0, 0%, 8%);
 }
@@ -122,4 +126,10 @@ body {
 .display p > span {
   color: hsl(259, 100%, 65%);
   letter-spacing: 1rem;
+}
+
+.error-field {
+  font-family: Poppins-Italic;
+  font-size: 0.8rem;
+  color: hsl(0, 100%, 67%);
 }
