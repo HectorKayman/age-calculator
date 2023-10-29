@@ -31,8 +31,6 @@
   font-family: Poppins-Bold, sans-serif;
   line-height: 1.5;
 
-  background-color: hsl(0, 0%, 94%);
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -47,6 +45,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(0, 0%, 94%);
 }
 
 .flex-flow {
@@ -140,4 +142,44 @@ label,
 
 .form-top .error-input[type='text'] {
   border: 1px solid hsl(0, 100%, 67%);
+}
+
+@media screen and (max-width: 375px) {
+  body {
+    scale: 0.75;
+  }
+
+  .container {
+    margin: 1rem;
+    padding: 1.5rem;
+    border-radius: 1.5rem 1.5rem 7rem 1.5rem;
+  }
+
+  .form-top {
+    gap: 1rem;
+  }
+
+  .input-div {
+    width: 8rem;
+  }
+
+  .div-pad {
+    display: none;
+  }
+
+  .form-bot {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+  }
+
+  .form-bot hr {
+    margin-block: 2rem;
+  }
+
+  .display p {
+    font-size: 4rem;
+    margin-bottom: 1rem;
+  }
 }
