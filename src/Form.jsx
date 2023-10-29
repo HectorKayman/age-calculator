@@ -110,7 +110,7 @@ export function Form({
         >
           Year
         </FormInput>
-        <div className="input-div"></div>
+        <div className="input-div div-pad"></div>
       </div>
       <div className="flex-flow form-bot">
         <hr />
